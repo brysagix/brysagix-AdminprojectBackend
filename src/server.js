@@ -13,9 +13,10 @@ const __dirname = dirname( __filename);
 console.log(__filename);
 console.log(__dirname);
 
+
 //config server en Dev
 export const server = new GraphQLServer({
-  typeDefs: "./src/graphql/schema.graphql",
+  typeDefs:  path.join(__dirname, "graphql/schema.graphql"),
   resolvers,
 }
 );
@@ -23,12 +24,11 @@ export const server = new GraphQLServer({
 /*
 //config server en Dev
 export const server = new GraphQLServer({
-  typeDefs: "src/graphql/schema.graphql",
+  typeDefs: "./src/graphql/schema.graphql",
   resolvers,
 }
 );
 */
-
 
 
 
