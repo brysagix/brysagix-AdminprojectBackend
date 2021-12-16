@@ -8,12 +8,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
-const __filename = fileURLToPath(process.env.ROOT_URL || import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 //config server en Dev
 export const server = new GraphQLServer({
-  typeDefs: path.join(__dirname, "graphql/schema.graphql"),
+  typeDefs: path.join(process.env.ROOT_URL || __dirname, "graphql/schema.graphql"),
   resolvers,
 });
 
