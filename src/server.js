@@ -13,7 +13,7 @@ const __dirname = dirname( __filename);
 
 //config server en Dev
 export const server = new GraphQLServer({
-  typeDefs: "https://back-mintic-ciclo4.herokuapp.com/src/graphql/schema.graphql",
+  typeDefs:  path.join("https://back-mintic-ciclo4.herokuapp.com/", "src/graphql/schema.graphql"),
   resolvers,
 }
 );
