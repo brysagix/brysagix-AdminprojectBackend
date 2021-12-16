@@ -13,7 +13,7 @@ const __dirname = dirname( __filename);
 
 //config server en Dev
 export const server = new GraphQLServer({
-  typeDefs:  path.join(process.env.ROOT_URL, "graphql/schema.graphql"),
+  typeDefs:  path.join(process.env.URL, "graphql/schema.graphql"),
   resolvers,
 }
 );
