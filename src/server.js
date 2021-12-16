@@ -18,7 +18,7 @@ export const server = new GraphQLServer({
 }
 );
 
-"https://back-mintic-ciclo4.herokuapp.com/"
+
 
 
 
