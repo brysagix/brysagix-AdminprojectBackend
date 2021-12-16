@@ -8,8 +8,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
-const __filename = fileURLToPath(process.env.ROOT_URL || import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath( import.meta.url);
+const __dirname = dirname(process.env.ROOT_URL || __filename);
 
 //config server en Dev
 export const server = new GraphQLServer({
