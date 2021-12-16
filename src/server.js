@@ -20,7 +20,7 @@ export const server = new GraphQLServer({
 */
 
 //En producción
-export const server = new ApolloServer({
+export const server = new GraphQLServer({
   typeDefs,
   resolvers,
   introspection: true,
