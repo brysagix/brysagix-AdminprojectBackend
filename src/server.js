@@ -29,7 +29,7 @@ export const server = new GraphQLServer({
 */
 
 export const server = new GraphQLServer({
-  typeDefs,
+  typeDefs: path.join(__dirname, "graphql/schema.graphql"),
   resolvers,
   introspection: true,
   playground: true,
