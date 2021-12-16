@@ -31,4 +31,6 @@ export const server = new GraphQLServer({
 export const server = new GraphQLServer({
   typeDefs,
   resolvers,
+  introspection: true,
+  playground: true,
 });
