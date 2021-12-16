@@ -1,0 +1,85 @@
+type Query {
+  saludame: String!
+  despedite: String!
+
+  usuarios: [Usuario!]
+  validarUsuario(correo: String!):Usuario
+  usuariosEstudiante:[Usuario!]
+
+  proyectos:[Proyecto!]
+  proyectosLider(iPrincipal: String!):[Proyecto!]
+  proyectosEstudiante(investigadores: String!):[Proyecto!]
+
+  avancesNombreProyecto(nombre: String!):[Proyecto!]
+
+  inscripciones:[Inscripcion!]
+
+  observaciones:[Observacion!]
+  observacionesByAvance(avance: String):[Observacion!]
+}
+
+
+
+
+#recordar que mongo crea el ID
+type Mutation {
+  createUser(nombre: String!, apellido: String!, personalID: Int!, correo: String!, rol: String!, estado: String!):Usuario
+  deleteUser(personalID: Int!):Usuario
+  actualizarUser(nombre: String!, apellido: String!,personalID: Int!, correo: String!, rol: String!, estado: String!):Usuario
+
+  createProject(nombre: String!, iPrincipal: String!, investigadores: [String!], objPrincipal: String!, objSecundario: [String!], estado: String!,habilitado: String!,avances: [String!],presupuesto:Int!):Proyecto
+  deleteProject(nombre: String!):Proyecto
+  actualizarProject(nombre: String!, iPrincipal: String!, investigadores: [String!], objPrincipal: String!, objSecundario: [String!], estado: String!,habilitado: String!,avances: [String!],presupuesto:Int!):Proyecto
+
+  createInscription(nombre: String!,apellido: String!,idEstudiante: Int!,proyecto: String!, estadoSolicitud: String!):Inscripcion
+  deleteInscription(nombre: String!,proyecto: String!):Inscripcion
+  actualizarInscripcion(nombre: String!,proyecto: String!,estadoSolicitud: String!):Inscripcion
+  agregarInvestigador(nombre: String!, estudianteAgregado:String!):Proyecto
+
+  agregarAvance(nombre: String!, avances:String!):Proyecto
+  deleteAvance(nombre: String!, avances:String!):Proyecto
+
+  createObservacion(datoRegistrado: String!, autor: String!, avance: String!, proyectoNombre: String!):Observacion
+  deleteObservacion(datoRegistrado: String!, autor: String!):Observacion
+}
+
+
+type Usuario {
+  _id: ID!
+  nombre: String!
+  apellido: String!
+  personalID: Int!
+  correo:String!
+  rol:String!
+  estado:String!
+}
+
+type Proyecto {
+  _id: ID!
+  nombre: String!
+  iPrincipal: String!
+  investigadores: [String!]
+  objPrincipal:String!
+  objSecundario:[String!]
+  estado:String!
+  habilitado:String!
+  avances:[String]
+  presupuesto:Int!
+}
+
+type Inscripcion {
+  _id: ID!
+  nombre: String!
+  apellido: String!
+  idEstudiante: Int!
+  proyecto:String!
+  estadoSolicitud:String!
+}
+
+type Observacion {
+  _id: ID!
+  datoRegistrado: String!
+  autor: String!
+  avance: String!
+  proyectoNombre: String!
+}
