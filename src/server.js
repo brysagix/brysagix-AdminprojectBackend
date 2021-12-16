@@ -11,9 +11,18 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-//config server
-
+//config server en Dev
+/*
 export const server = new GraphQLServer({
   typeDefs: path.join(__dirname, "graphql/schema.graphql"),
   resolvers,
+});
+*/
+
+//En producción
+export const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  playground: true,
 });

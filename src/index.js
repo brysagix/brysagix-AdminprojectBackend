@@ -1,6 +1,5 @@
 //Actualizado 29/11/2021
 
-
 import {server} from "./server.js"
 import "./database.js"
 
