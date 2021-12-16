@@ -15,7 +15,7 @@ console.log(__dirname);
 
 //config server en Dev
 export const server = new GraphQLServer({
-  typeDefs: "https://back-mintic-ciclo4.herokuapp.com/src/graphql/schema.graphql",
+  typeDefs: "src/graphql/schema.graphql",
   resolvers,
 }
 );
