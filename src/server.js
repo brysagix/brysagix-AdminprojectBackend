@@ -8,7 +8,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
-const __filename = fileURLToPath( import.meta.url);
+const __filename = "https://back-mintic-ciclo4.herokuapp.com/";
 const __dirname = dirname( __filename);
 
 //config server en Dev
