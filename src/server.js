@@ -10,13 +10,17 @@ import { dirname } from "path";
 
 const __filename = fileURLToPath( import.meta.url);
 const __dirname = dirname( __filename);
+console.log(__filename);
+console.log(__dirname);
 
 //config server en Dev
 export const server = new GraphQLServer({
-  typeDefs:  path.join("https://back-mintic-ciclo4.herokuapp.com/", "src/graphql/schema.graphql"),
+  typeDefs: "https://back-mintic-ciclo4.herokuapp.com/src/graphql/schema.graphql",
   resolvers,
 }
 );
+
+
 
 
 
