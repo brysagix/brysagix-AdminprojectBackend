@@ -12,22 +12,22 @@ nombre:{
 
 iPrincipal:{
     type:String,
-    required:true
+    required:false
 },
 
 investigadores:{
     type: [String],
-    required:true
+    required:false
 },
 
 objPrincipal:{
     type:String,
-    required:true
+    required:false
 },
 
 objSecundario:{
     type:[String],
-    required:true
+    required:false
 },
 
 
@@ -43,12 +43,12 @@ habilitado:{
 
 avances:{
     type:[String],
-    required:true
+    required:false
 },
 
 presupuesto:{
     type:Number,
-    required:true
+    required:false
 },
 
 });
